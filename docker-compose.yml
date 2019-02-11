@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+    djangoweb:
+      build: ./.docker
+      command: python3 manage.py runserver 0.0.0.0:8000
+      volumes:
+        - .:/application
+      ports:
+        - "8000:8000"
+      container_name: djangoweb
